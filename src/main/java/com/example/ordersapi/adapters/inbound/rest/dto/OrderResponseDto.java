@@ -2,9 +2,9 @@ package com.example.ordersapi.adapters.inbound.rest.dto;
 
 public class OrderResponseDto {
 
-    private Long id;
-    private String product;
-    private int quantity;
+    private final Long id;
+    private final String product;
+    private final int quantity;
 
     public OrderResponseDto(Long id, String product, int quantity) {
         this.id = id;
