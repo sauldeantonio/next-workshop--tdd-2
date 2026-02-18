@@ -1,31 +1,43 @@
 Feature: Manage orders
-  In order to maintain the order system
+  In order to maintain the gift system
   As an API user
-  I want to create, retrieve and delete orders
+  I want to create, retrieve and delete gifts
 
-  Scenario: Create an order
-    Given an order with product "Book" and quantity 2
-    When the order is saved
-    Then the order is persisted successfully
+  Scenario: Create an gift
+    Given a gift with product "Book" and quantity 2
+    When the gift is saved
+    Then the gift is persisted successfully
 
-  Scenario: Delete an order
-    Given an existing order with product "Pen" and quantity 5
-    When the order is deleted
-    Then the order no longer exists
+  Scenario outline: Create an gift
+     Given a gift with product <prod> and quantity <qty>
+     When the gift is saved
+     Then the gift is persisted successfully
 
-  Scenario: Get non-existing order
-    When I request an order with id 999
+  Example:
+  |prod|qty|
+  |"Book"|1|
+  |"Pen"|5|
+  |"Photo"|2|
+
+
+  Scenario: Delete an gift
+    Given an existing gift with product "Pen" and quantity 5
+    When the gift is deleted
+    Then the gift no longer exists
+
+  Scenario: Get non-existing gift
+    When I request a gift with id 999
     Then the response status should be 404
 
-  Scenario: Delete non-existing order
-    When I delete an order with id 999
+  Scenario: Delete non-existing gift
+    When I delete a gift with id 999
     Then the response status should be 404
 
-  Scenario: Get all orders
-    Given an existing order with product "Notebook" and quantity 3
-    When I request all orders
+  Scenario: Get all gifts
+    Given an existing gift with product "Notebook" and quantity 3
+    When I request all gifts
     Then the response status should be 200
 
-  Scenario: Create order with invalid body
-    When I create an order with invalid payload
+  Scenario: Create gift with invalid body
+    When I create a gift with invalid payload
     Then the response status should be 500

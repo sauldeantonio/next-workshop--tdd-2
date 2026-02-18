@@ -1,12 +1,13 @@
 package com.example.ordersapi.domain.model;
 
-public class Order {
+public class Gift {
 
     private Long id;
     private String product;
     private int quantity;
+    private String description;
 
-    public Order() {
+    public Gift() {
     }
 
     public Long getId() {
@@ -31,5 +32,13 @@ public class Order {
 
     public void setQuantity(int quantity) {
         this.quantity = quantity;
+    }
+
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
     }
 }

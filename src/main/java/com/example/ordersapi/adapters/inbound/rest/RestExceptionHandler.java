@@ -1,6 +1,6 @@
 package com.example.ordersapi.adapters.inbound.rest;
 
-import com.example.ordersapi.domain.exception.OrderNotFoundException;
+import com.example.ordersapi.domain.exception.GiftNotFoundException;
 import jakarta.annotation.Nonnull;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -10,8 +10,8 @@ import org.springframework.web.bind.annotation.ExceptionHandler;
 @ControllerAdvice
 public class RestExceptionHandler {
 
-    @ExceptionHandler(OrderNotFoundException.class)
-    public ResponseEntity<String> handleOrderNotFound(@Nonnull OrderNotFoundException ex) {
+    @ExceptionHandler(GiftNotFoundException.class)
+    public ResponseEntity<String> handleOrderNotFound(@Nonnull GiftNotFoundException ex) {
         return ResponseEntity.status(HttpStatus.NOT_FOUND).body(ex.getMessage());
     }
 

@@ -1,29 +1,29 @@
 package com.example.ordersapi.adapters.outbound.persistence;
 
-import com.example.ordersapi.domain.model.Order;
+import com.example.ordersapi.domain.model.Gift;
 import org.springframework.stereotype.Component;
 
 @Component
-public class OrderPersistenceMapper {
+public class GiftPersistenceMapper {
 
-    public OrderEntity toEntity(Order domain) {
+    public GiftEntity toEntity(Gift domain) {
         if (domain == null) {
             return null;
         }
 
-        OrderEntity entity = new OrderEntity();
+        GiftEntity entity = new GiftEntity();
         entity.setId(domain.getId());
         entity.setProduct(domain.getProduct());
         entity.setQuantity(domain.getQuantity());
         return entity;
     }
 
-    public Order toDomain(OrderEntity entity) {
+    public Gift toDomain(GiftEntity entity) {
         if (entity == null) {
             return null;
         }
 
-        Order domain = new Order();
+        Gift domain = new Gift();
         domain.setId(entity.getId());
         domain.setProduct(entity.getProduct());
         domain.setQuantity(entity.getQuantity());

@@ -1,15 +1,17 @@
 package com.example.ordersapi.adapters.inbound.rest.dto;
 
-public class OrderResponseDto {
+public class GiftResponseDto {
 
     private final Long id;
     private final String product;
     private final int quantity;
+    private String description;
 
-    public OrderResponseDto(Long id, String product, int quantity) {
+    public GiftResponseDto(Long id, String product, int quantity, String description) {
         this.id = id;
         this.product = product;
         this.quantity = quantity;
+        this.description=description;
     }
 
     public Long getId() {
@@ -23,4 +25,6 @@ public class OrderResponseDto {
     public int getQuantity() {
         return quantity;
     }
+
+    public String getDescription(){return description;}
 }

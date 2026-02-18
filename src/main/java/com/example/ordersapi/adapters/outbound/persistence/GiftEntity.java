@@ -4,7 +4,7 @@ import jakarta.persistence.*;
 
 @Entity
 @Table(name = "orders")
-public class OrderEntity {
+public class GiftEntity {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -13,7 +13,7 @@ public class OrderEntity {
     private String product;
     private int quantity;
 
-    public OrderEntity() {
+    public GiftEntity() {
     }
 
     public Long getId() {
