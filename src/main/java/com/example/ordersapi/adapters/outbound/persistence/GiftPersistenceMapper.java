@@ -15,6 +15,7 @@ public class GiftPersistenceMapper {
         entity.setId(domain.getId());
         entity.setProduct(domain.getProduct());
         entity.setQuantity(domain.getQuantity());
+        entity.setDescription(domain.getDescription());
         return entity;
     }
 
@@ -27,6 +28,7 @@ public class GiftPersistenceMapper {
         domain.setId(entity.getId());
         domain.setProduct(entity.getProduct());
         domain.setQuantity(entity.getQuantity());
+        domain.setDescription(entity.getDescription());
         return domain;
     }
 }

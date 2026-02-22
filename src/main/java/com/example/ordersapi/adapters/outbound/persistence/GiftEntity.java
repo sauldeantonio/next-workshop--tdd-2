@@ -12,6 +12,7 @@ public class GiftEntity {
 
     private String product;
     private int quantity;
+    private String description;
 
     public GiftEntity() {
     }
@@ -38,5 +39,13 @@ public class GiftEntity {
 
     public void setQuantity(int quantity) {
         this.quantity = quantity;
+    }
+
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
     }
 }

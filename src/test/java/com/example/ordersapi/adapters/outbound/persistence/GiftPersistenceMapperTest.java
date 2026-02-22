@@ -15,6 +15,7 @@ class GiftPersistenceMapperTest {
         domain.setId(1L);
         domain.setProduct("Book");
         domain.setQuantity(2);
+        domain.setDescription("");
 
         GiftEntity entity = mapper.toEntity(domain);
 
